@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block title %}about{% endblock title %}
+{% block head %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9fa;
+    }
+
+    header {
+        background-color: #343a40;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 1rem;
+    }
+
+    nav ul li a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1.2rem;
+    }
+
+    main {
+        padding: 2rem;
+        text-align: center;
+    }
+
+    #about-us {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    #about-us h1 {
+        color: #343a40;
+    }
+
+    .team {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .team-member {
+        text-align: center;
+    }
+
+    .team-member img {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+    }
+
+    .team-member h2 {
+        margin-top: 1rem;
+        color: #343a40;
+    }
+
+    .team-member p {
+        color: #6c757d;
+    }
+</style>
+{% endblock head %}
+
+{% block body %}
+<main>
+    <section id="about-us">
+        <h1>About Us</h1>
+        <p>Welcome to our ice cream shop! We pride ourselves on offering the best ice cream in town. Our mission is to bring joy to our customers with our delicious and innovative flavors.</p>
+        <div class="team">
+            <div class="team-member">
+                <img src="static/img/priyanshu.jpg" alt="Founder">
+                <h2>Priyanshu Rohella</h2>
+                <p>Founder & CEO</p>
+            </div>
+            <div class="team-member">
+                <img src="static/img/parth.jpg" alt="Co-founder">
+                <h2>Parth Sharma</h2>
+                <p>Co-Founder</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const teamMembers = document.querySelectorAll('.team-member');
+
+        teamMembers.forEach(member => {
+            member.addEventListener('mouseover', () => {
+                member.style.transform = 'scale(1.1)';
+                member.style.transition = 'transform 0.3s';
+            });
+
+            member.addEventListener('mouseout', () => {
+                member.style.transform = 'scale(1)';
+            });
+        });
+    });
+</script>
+
+{% endblock body %}
